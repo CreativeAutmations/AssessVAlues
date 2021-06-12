@@ -1,42 +1,62 @@
-var QualitySet = [];
+var currentStage = 0;
+var stageConfig = [
+    {"cond" : "min" , "val" : 24 },
+    {"cond" : "exact" , "val" : 24},
+    {"cond" : "exact" , "val" : 12},
+    {"cond" : "exact" , "val" : 6}
+];
 
-var element = {};element.qualities = []; element.boxname ="A";	element.qualities.push({"qname" :  "Active"});	element.qualities.push({"qname" :  "Variety"});	element.qualities.push({"qname" :  "Sports "});	element.qualities.push({"qname" :  "Opportunities"});	element.qualities.push({"qname" :  "Flexible"});	element.qualities.push({"qname" :  "Spontaneous "});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="B";	element.qualities.push({"qname" :  "Organized"});	element.qualities.push({"qname" :  "Planned"});	element.qualities.push({"qname" :  "Neat"});	element.qualities.push({"qname" :  "Parental"});	element.qualities.push({"qname" :  "Traditional "});	element.qualities.push({"qname" :  "Responsible"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="C";	element.qualities.push({"qname" :  "Warm"});	element.qualities.push({"qname" :  "Helpful"});	element.qualities.push({"qname" :  "Friends"});	element.qualities.push({"qname" :  "Authentic "});	element.qualities.push({"qname" :  "Harmonious "});	element.qualities.push({"qname" :  "Compassionate"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="D";	element.qualities.push({"qname" :  "Learning"});	element.qualities.push({"qname" :  "Science "});	element.qualities.push({"qname" :  "Quiet"});	element.qualities.push({"qname" :  "Versatile "});	element.qualities.push({"qname" :  "Inventive "});	element.qualities.push({"qname" :  "Competent"});	QualitySet.push(element);
+var ValueSet = {
+    "toselect" : stageConfig[currentStage].val,
+    "values" : [
+        {"groupname" : "group1",
+            "valuelist" : [{"vname": "first"}, {"vname": "second"}, {"vname": "third"}]
+        },
 
-var element = {};element.qualities = []; element.boxname ="E";	element.qualities.push({"qname" :  "Curious"});	element.qualities.push({"qname" :  "Ideas"});	element.qualities.push({"qname" :  "Questions "});	element.qualities.push({"qname" :  "Knowledge"});	element.qualities.push({"qname" :  "Problem Solver"});	element.qualities.push({"qname" :  "Conceptual"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="F";	element.qualities.push({"qname" :  "Caring"});	element.qualities.push({"qname" :  "People Oriented "});	element.qualities.push({"qname" :  "Unique"});	element.qualities.push({"qname" :  "Empathetic"});	element.qualities.push({"qname" :  "Feelings"});	element.qualities.push({"qname" :  " Communicative"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="G";	element.qualities.push({"qname" :  "Orderly "});	element.qualities.push({"qname" :  "On-time "});	element.qualities.push({"qname" :  "Honest "});	element.qualities.push({"qname" :  "Stable "});	element.qualities.push({"qname" :  "Sensible "});	element.qualities.push({"qname" :  "Dependable"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="H";	element.qualities.push({"qname" :  "Action"});	element.qualities.push({"qname" :  "Challenges "});	element.qualities.push({"qname" :  "Competitive "});	element.qualities.push({"qname" :  "Impetuous"});		QualitySet.push(element);
+        {"groupname" : "group2",
+            "valuelist" : [{"vname": "first 2"}, {"vname": "second 2"}, {"vname": "third 2"}]
+        },
+        
+        {"groupname" : "group4",
+            "valuelist" : [{"vname": "first 4"}, {"vname": "second 4"}, {"vname": "third 4"}]
+        },
 
-var element = {};element.qualities = []; element.boxname ="I";	element.qualities.push({"qname" :  "Helpful"});	element.qualities.push({"qname" :  "Trustworthy"});	element.qualities.push({"qname" :  "Loyal"});	element.qualities.push({"qname" :  "Conservative "});	element.qualities.push({"qname" :  "Dependable"});	element.qualities.push({"qname" :  "Organized"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="J";	element.qualities.push({"qname" :  "Kind"});	element.qualities.push({"qname" :  "Understanding "});	element.qualities.push({"qname" :  "Giving"});	element.qualities.push({"qname" :  "Devoted"});	element.qualities.push({"qname" :  "Warm "});	element.qualities.push({"qname" :  "Poetic"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="K";	element.qualities.push({"qname" :  "Playful"});	element.qualities.push({"qname" :  "Quick"});	element.qualities.push({"qname" :  "Adventurous"});	element.qualities.push({"qname" :  "Open Minded "});	element.qualities.push({"qname" :  "Confrontative"});	element.qualities.push({"qname" :  "Independent"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="L";	element.qualities.push({"qname" :  "Independent "});	element.qualities.push({"qname" :  "Competent "});	element.qualities.push({"qname" :  "Why Questions "});	element.qualities.push({"qname" :  "Exploring"});	element.qualities.push({"qname" :  "Theoretical "});	element.qualities.push({"qname" :  "Ingenious"});	QualitySet.push(element);
+        {"groupname" : "group4",
+            "valuelist" : [{"vname": "first 4"}, {"vname": "second 4"}, {"vname": "third 4"}]
+        },
 
-var element = {};element.qualities = []; element.boxname ="M";	element.qualities.push({"qname" :  "Follow Rules"});	element.qualities.push({"qname" :  "Useful"});	element.qualities.push({"qname" :  "SaveMoney "});	element.qualities.push({"qname" :  "Concerned"});	element.qualities.push({"qname" :  "Procedural"});	element.qualities.push({"qname" :  "Cooperative"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="N";	element.qualities.push({"qname" :  "Active"});	element.qualities.push({"qname" :  "Free"});	element.qualities.push({"qname" :  "Winning"});	element.qualities.push({"qname" :  "Daring"});	element.qualities.push({"qname" :  "Impulsive"});	element.qualities.push({"qname" :  "Risk Taker"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="O";	element.qualities.push({"qname" :  "Sharing"});	element.qualities.push({"qname" :  "Getting Along "});	element.qualities.push({"qname" :  "Tender"});	element.qualities.push({"qname" :  "Inspirational"});	element.qualities.push({"qname" :  "Dramatic"});	element.qualities.push({"qname" :  "Feelings"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="P";	element.qualities.push({"qname" :  "Thinking"});	element.qualities.push({"qname" :  "Solving Problems"});	element.qualities.push({"qname" :  "Perfectionistic "});	element.qualities.push({"qname" :  "Determined "});	element.qualities.push({"qname" :  "Complex "});	element.qualities.push({"qname" :  "Composed"});	QualitySet.push(element);
+        {"groupname" : "group4",
+            "valuelist" : [{"vname": "first 4"}, {"vname": "second 4"}, {"vname": "third 4"}]
+        },
 
-var element = {};element.qualities = []; element.boxname ="Q";	element.qualities.push({"qname" :  "Puzzles "});	element.qualities.push({"qname" :  "Seeking Info"});	element.qualities.push({"qname" :  "Making Sense"});	element.qualities.push({"qname" :  "Rational"});	element.qualities.push({"qname" :  "Principled "});	element.qualities.push({"qname" :  "Philosophical "});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="R";	element.qualities.push({"qname" :  "Social Causes "});	element.qualities.push({"qname" :  "Happy Endings "});	element.qualities.push({"qname" :  "Easy Going"});	element.qualities.push({"qname" :  "Approachable "});	element.qualities.push({"qname" :  "Affectionate "});	element.qualities.push({"qname" :  "Sympathetic"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="S";	element.qualities.push({"qname" :  "Exciting"});	element.qualities.push({"qname" :  "Lively"});	element.qualities.push({"qname" :  "Hands On"});	element.qualities.push({"qname" :  "Skillful"});	element.qualities.push({"qname" :  "Courageous"});	element.qualities.push({"qname" :  "On Stage"});	QualitySet.push(element);
-var element = {};element.qualities = []; element.boxname ="T";	element.qualities.push({"qname" :  "Pride"});	element.qualities.push({"qname" :  "Tradition"});	element.qualities.push({"qname" :  "Do Things Right "});	element.qualities.push({"qname" :  "Conventional "});	element.qualities.push({"qname" :  "Orderly"});	element.qualities.push({"qname" :  "Careful"});	QualitySet.push(element);
+        {"groupname" : "group4",
+            "valuelist" : [{"vname": "first 4"}, {"vname": "second 4"}, {"vname": "third 4"}]
+        },
+
+        {"groupname" : "group4",
+            "valuelist" : [{"vname": "first 4"}, {"vname": "second 4"}, {"vname": "third 4"}]
+        },
+
+        {"groupname" : "group5",
+            "valuelist" : [{"vname": "first 5"}, {"vname": "second 5"}, {"vname": "third 5"}]
+        },
+
+        {"groupname" : "group3",
+            "valuelist" : [{"vname": "first 3"}, {"vname": "second 3"}, {"vname": "third 3"}]
+        }
+    ]
+}; 
 
 
+var selectedValues = [[],[],[],[],[],[]];
 
-function ShowTest()
+function ShowActivity()
 {
     $("#explanation").hide();
     $("#element_container").hide();
-    
-    var dataForelementTemplate = { "qualities_container" : QualitySet };
-    var elements_html = Mustache.render(element_template, dataForelementTemplate);
+    var elements_html = Mustache.render(values_template, ValueSet);
     document.getElementById("element_container").innerHTML = elements_html;
     $("#element_container").show();
-    $('#element_container').scrollTop();
 
     var maxheight = 0;
     $( ".mybox" ).each(function( index ) {
@@ -47,7 +67,93 @@ function ShowTest()
     });
     
     $( ".mybox" ).height(maxheight );
+    manageActionButtons();
 }
+
+function canAddMore()
+{
+    if ( stageConfig[currentStage].val > selectedValues[currentStage].length )
+        return true;
+    if ( stageConfig[currentStage].cond == "min" )
+        return true;
+    
+    return false; 
+}
+
+function Next()
+{
+    // create the structure to populate the template
+    // populate the template
+    // replace the values
+
+    $("#element_container").hide();
+
+    if ( (currentStage+1) <  stageConfig.length )
+    {
+        var elementdata = {"toselect": stageConfig[currentStage+1].val , "valuelist": selectedValues[currentStage]} 
+        var elements_html = Mustache.render(values_template_1, elementdata);
+    }
+    else
+    { 
+        var elementdata = {"toselect": 0 , "valuelist": selectedValues[currentStage]} 
+        var elements_html = Mustache.render(result_template, elementdata);
+    }
+
+    document.getElementById("element_container").innerHTML = elements_html;
+    $("#element_container").show();
+    currentStage++;
+    manageActionButtons();
+}
+function Previous()
+{
+    if ( currentStage == stageConfig.length )
+        currentStage--;
+
+    currentStage--;
+    var elementdata = {"valuelist": selectedValues[currentStage]} 
+    $("#element_container").hide();
+    var elements_html = Mustache.render(values_template_1, elementdata);
+    document.getElementById("element_container").innerHTML = elements_html;
+    $("#element_container").show();
+    manageActionButtons();
+}
+function manageActionButtons()
+{
+
+    if ( currentStage >= stageConfig.length )
+        $("#next_btn").hide();
+    else if ( stageConfig[currentStage].val > selectedValues[currentStage].length )
+        $("#next_btn").hide();
+    else
+        $("#next_btn").show();
+}
+
+function SelectValue(e, gvalue)
+{
+    console.log("test");
+    arr = selectedValues[currentStage];
+    colornow = e.target.parentNode.style.backgroundColor ;
+    if ( colornow == "green")
+    {
+
+        for( var i = 0; i < arr.length ; i++){ 
+                                   
+            if ( arr[i].vname  === gvalue ) { 
+                arr.splice(i, 1); 
+                i--; 
+            }
+        }
+
+        e.target.parentNode.style.backgroundColor = "lightgrey";
+    }
+    else if (canAddMore()){
+        e.target.parentNode.style.backgroundColor = "green";
+        arr.push({"vname":gvalue});
+    }
+
+    manageActionButtons();
+}
+
 
 function ShowResults()
 {
