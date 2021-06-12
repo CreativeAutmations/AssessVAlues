@@ -427,6 +427,8 @@ function SelectValue(e, gvalue)
         arr.push({"vname":gvalue});
     }
 
+    $("#select_status").text(arr.length + " values selected")
+
     manageActionButtons();
 }
 

@@ -22,6 +22,14 @@ select {{toselect}} values
 
     <div class="row">
     <div class="col-md-12">
+    <br>
+    <h3 id="select_status" style="color:blue; float: right;"></h3>
+    <br>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-12">
     <button id="next_btn" onclick="Next()" style="float: right;">Next</button>
     </div>
     </div>
@@ -50,6 +58,14 @@ select minimum {{toselect}} values
         {{/valuelist}}
     </div>
     {{/values}}
+
+    <div class="row">
+    <div class="col-md-12">
+    <br>
+    <h3 id="select_status" style="color:blue; float: right;"></h3>
+    <br>
+    </div>
+    </div>
 
     <div class="row">
     <div class="col-md-12">
@@ -83,11 +99,6 @@ You have identified your core values
         {{/valuelist}}
     </div>
 
-    <div class="row">
-    <div class="col-md-12">
-    <button id="next_btn" onclick="Next()" style="float: right;">Next</button>
-    </div>
-    </div>
 
 
     `;
