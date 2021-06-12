@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\AutomatedPersonalityAssesment"
+		},
+		{
+			"name": "Level1PersonalityAssessment",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Level1PersonalityAssessment"
+	}
+}
