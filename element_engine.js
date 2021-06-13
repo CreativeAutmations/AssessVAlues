@@ -4,8 +4,8 @@ values_template_1 =
 <div class="row">
 <div class="instructions col-md-12">
 <p>
-<h1>Instructions:</h1>																
-select {{toselect}} values
+<h1>Instructions:</h1>													
+<h2>Select {{toselect}} values</h2>
 <br> 																		
 </p>
 </div>
@@ -43,7 +43,7 @@ var values_template =
 <div class="instructions col-md-12">
 <p>
 <h1>Instructions:</h1>
-select minimum {{toselect}} values
+<h2>Select minimum {{toselect}} values</h2>
 </p>
 </div>
 </div>
@@ -84,7 +84,7 @@ var result_template =
 <div class="instructions col-md-12">
 <p>
 <h1>Congratulations:</h1>																
-You have identified your core values
+<h2>You have identified your core values</h2>
 <br> 																		
 </p>
 </div>

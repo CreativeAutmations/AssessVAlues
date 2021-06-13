@@ -6,19 +6,6 @@ var stageConfig = [
     {"cond" : "exact" , "val" : 6}
 ];
 
-var ValueSetRef = {
-    "toselect" : stageConfig[currentStage].val,
-    "values" : [
-        {"groupname" : "group1",
-            "valuelist" : [{"vname": "first"}, {"vname": "second"}, {"vname": "third"}]
-        },
-
-        {"groupname" : "group2",
-            "valuelist" : [{"vname": "first 2"}, {"vname": "second 2"}, {"vname": "third 2"}]
-        }        
-    ]
-}; 
-
 var ValueSet = {};
 ValueSet.toselect = stageConfig[currentStage].val;
 ValueSet.values = [];
@@ -432,53 +419,3 @@ function SelectValue(e, gvalue)
     manageActionButtons();
 }
 
-
-function ShowResults()
-{
-    var RED = ["A", "H" , "K" , "N" , "S"];
-    var GREEN = ["D", "E" , "L" , "P" , "Q"];
-    var BLUE = ["C", "F" , "O" , "J" , "R"];
-    var YELLOW = ["B", "G" , "I" , "M" , "T"];
-
-    var color_groups = [];
-    color_groups.push( {"code": "red" , "values" : RED});
-    color_groups.push( {"code": "green" , "values" : GREEN});
-    color_groups.push( {"code": "blue" , "values" : BLUE});
-    color_groups.push( {"code": "yellow" , "values" : YELLOW});
-
-    var result_data = {};
-    result_data.red = 0;
-    result_data.green = 0;
-    result_data.blue = 0;
-    result_data.yellow = 0;
-
-    var i;
-    var j;
-    for (i = 0; i < color_groups.length; i++) 
-    {
-        code = color_groups[i].code;
-        for (j = 0; j < color_groups[i].values.length; j++)
-        {
-            if ( value < 1 )
-            {
-               // alert("Please provide your assessment for all sections");
-               $("#alertcontainer").html(`<div class="alert alert-danger alert-dismissible show" role="alert">
-               Please provide your assessment for all sections
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-               </button></div>`);
-
-                return;
-            } 
-            var boxid  = color_groups[i].values[j];
-            var value =  $("#" + boxid).val();
-            result_data[code] += parseInt(value);
-        } 
-    }
-
-    var results_html = Mustache.render(result_template, result_data);
-
-    $("#explanation").show();
-    document.getElementById("results").innerHTML = results_html;
-    document.getElementById("element_container").innerHTML = "";
-}
