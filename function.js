@@ -331,6 +331,7 @@ function ShowActivity()
     
     $( ".mybox" ).height(maxheight );
     manageActionButtons();
+    window.scrollTo(0,0);
 }
 
 function canAddMore()
@@ -366,6 +367,7 @@ function Next()
     $("#element_container").show();
     currentStage++;
     manageActionButtons();
+    window.scrollTo(0,0);
 }
 function Previous()
 {
